@@ -1,0 +1,22 @@
+{
+  "name": "genpark-personal-agent-cortisol-circadian-car-curve-skill",
+  "version": "1.0.0",
+  "description": "Models Cortisol Awakening Response (CAR), audits diurnal slope flattening, and prescribes circadian protocols to restore HPA axis pulsatility.",
+  "tools": [
+    {
+      "name": "evaluate_diurnal_cortisol_curve",
+      "description": "Evaluates CAR 30-min peak, diurnal slope decay, and nocturnal nadir from salivary samples.",
+      "parameters": {
+        "cortisol_samples_nmol_l": "list of objects with {time, minutes_post_wake, nmol_l}"
+      }
+    },
+    {
+      "name": "recommend_hpa_resilience_protocol",
+      "description": "Prescribes circadian light, breathwork, and nutritional protocols to restore HPA rhythm.",
+      "parameters": {
+        "car_status_category": "string (optional, default 'blunted')",
+        "evening_cortisol_elevated": "bool (optional, default false)"
+      }
+    }
+  ]
+}
